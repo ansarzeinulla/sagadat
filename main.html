@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сағадаттың 1 Жас Тұсаукесер Тойы</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <header>
+    <img src="crop.jpg" alt="Той баннері" class="banner">
+    <h1>Тұңғыш немереміз Сағадаттың 1 жасқа толуы және тұсаукесер тойы</h1>
+    <p>Ұйымдастырушылар: Мұхтар & Жанар</p>
+  </header>
+
+
+  <audio id="myAudio">
+  <source src="nemere.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- <button onclick="playAudio()">Play Music</button> -->
+
+<script>
+  var audio = document.getElementById("myAudio");
+
+  function playAudio() {
+      var audio = document.getElementById("myAudio");
+      audio.play().catch(function(error) {
+        console.error("Audio play failed:", error);
+      });
+    }
+  document.body.addEventListener('touchstart', playAudio);
+    window.addEventListener('scroll', playAudio);
+    window.addEventListener('keydown', playAudio);
+
+</script>
+
+
+
+  <section>
+    <table>
+      <caption><h2 class="greenh2"><i class="fas fa-calendar-alt"></i> 30 Маусым 2025, 18:00</h2></caption>
+      <tr>
+        <th>Дс</th><th>Сс</th><th>Ср</th><th>Бс</th><th>Жм</th><th>Сн</th><th>Жс</th>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td>1</td>
+      </tr>
+      <tr>
+        <td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+      </tr>
+      <tr>
+        <td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+      </tr>
+      <tr>
+        <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+      </tr>
+      <tr>
+        <td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+      </tr>
+      <tr>
+        <td class="highlight">30</td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+    </table>
+
+    <h3>Қалған уақыт:</h3>
+    <div id="countdown"></div>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-map-marker-alt"></i> Мекенжай</h2>
+    <p>Астана қаласы, Ақмола көшесі 61 Б</p>
+    <p>"Diana Hall" тойханасы</p>
+    <a class="dg-widget-link" href="http://2gis.kz/nur_sultan/firm/70000001079217385/center/71.33225440979005,51.194191029565296/zoom/15?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Астаны</a><div class="dg-widget-link"><a href="http://2gis.kz/nur_sultan/firm/70000001079217385/photos/70000001079217385/center/71.33225440979005,51.194191029565296/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div><div class="dg-widget-link"><a href="http://2gis.kz/nur_sultan/center/71.324692,51.196343/zoom/15/routeTab/rsType/bus/to/71.324692,51.196343╎Диана, банкетный зал?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Диана, банкетный зал</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":"100%","height":400,"borderColor":"#a3a3a3","pos":{"lat":51.194191029565296,"lon":71.33225440979005,"zoom":15},"opt":{"city":"nur_sultan"},"org":[{"id":"70000001079217385"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+  </section>
+
+  <section class="form-section">
+    <h2 class="greenh2"><i class="fas fa-check-circle" style="color: green !important;"></i> Келесіздер ме?</h2>
+    <form id="rsvpForm">
+      <div id="nameCheckboxes"></div>
+      <label for="wish">Тілек айту:</label>
+      <textarea id="wish" rows="4" placeholder="Сіздің тілегіңіз..."></textarea>
+      <button type="submit">Жіберу</button>
+    </form>
+  </section>
+
+  <section>
+  <h2 class="redh2"><i class="fas fa-heart"></i> Тілектер</h2>
+  <div id="wishes"></div>
+  </section>
+
+
+  <footer>
+    <p>Автор: Ansar Zeinulla</p>
+  </footer>
+</body>
+</html>
