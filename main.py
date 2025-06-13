@@ -104,7 +104,7 @@ def getCheck():
                     continue
                 f.write(f"Document ID: {doc_id}\n")
                 num_people = data.get("numberOfPeople", 0)
-
+                wish = data.get("wish")
                 for i in range(1, num_people + 1):
                     person_key = f"person{i}"
                     will_come_key = f"{person_key}WillCome"
@@ -120,6 +120,7 @@ def getCheck():
                         status = "UnAnswered"
 
                     f.write(f"  {name}: {status}\n")
+                f.write(f"тілек: {wish if wish else 'Тілек жоқ'}\n")
                 f.write("\n")
 
         print("Results written to results.txt")
