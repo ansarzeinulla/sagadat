@@ -85,7 +85,11 @@ def main():
         # Update Firestore document
         doc_ref = db.collection("sagadat").document(doc_id)
         doc_ref.set(data, merge=True)
-        print(f"Successfully updated Firestore document {doc_id} with {len(names)} people")
+        if len(names) == 1:
+            print(f"https://ansarzeinulla.github.io/sagadat/main.html?id={doc_id} {names[0]}")
+        else:
+            print(f"https://ansarzeinulla.github.io/sagadat/main.html?id={doc_id} {names[0]}-{names[-1]}")
+        
     except Exception as e:
         print(f"Error updating Firestore: {str(e)}")
 
