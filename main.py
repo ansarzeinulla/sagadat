@@ -93,5 +93,41 @@ def main():
     except Exception as e:
         print(f"Error updating Firestore: {str(e)}")
 
+def getCheck():
+    try:
+        docs = db.collection("sagadat").stream()
+        with open("results.txt", "w", encoding="utf-8") as f:
+            for doc in docs:
+                data = doc.to_dict()
+                doc_id = doc.id
+                if doc_id == "1000":
+                    continue
+                f.write(f"Document ID: {doc_id}\n")
+                num_people = data.get("numberOfPeople", 0)
+
+                for i in range(1, num_people + 1):
+                    person_key = f"person{i}"
+                    will_come_key = f"{person_key}WillCome"
+                    name = data.get(person_key, f"person{i}")
+                    
+                    if will_come_key not in data:
+                        status = "Жауап БЕРМЕДІ   !!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                    elif data[will_come_key] is True:
+                        status = "Келеді"
+                    elif data[will_come_key] is False:
+                        status = "Келмейді ХХХ"
+                    else:
+                        status = "UnAnswered"
+
+                    f.write(f"  {name}: {status}\n")
+                f.write("\n")
+
+        print("Results written to results.txt")
+        
+    except Exception as e:
+        print(f"Error retrieving Firestore data: {str(e)}")
+
+
 if __name__ == "__main__":
-    main()
+    #main()
+    getCheck()
